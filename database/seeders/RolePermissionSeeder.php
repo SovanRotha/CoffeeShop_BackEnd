@@ -22,6 +22,11 @@ class RolePermissionSeeder extends Seeder
         $admin->syncPermissions([
             'dashboard.view',
 
+            'users.view',
+            'users.create',
+            'users.update',
+            'users.delete',
+
             'categories.view',
             'categories.create',
             'categories.update',

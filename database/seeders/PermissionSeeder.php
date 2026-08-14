@@ -34,11 +34,29 @@ class PermissionSeeder extends Seeder
             'modifiers.update',
             'modifiers.delete',
 
+            // Modifier_Options
+            'modifier_options.view',
+            'modifier_options.create',
+            'modifier_options.update',
+            'modifier_options.delete',
+
+            // Menu Item Modifiers
+            'menu_item_modifiers.view',
+            'menu_item_modifiers.create',
+            'menu_item_modifiers.update',
+            'menu_item_modifiers.delete',
+
             // Recipes
             'recipes.view',
             'recipes.create',
             'recipes.update',
             'recipes.delete',
+
+            // Recipe Items
+            'recipe_items.view',
+            'recipe_items.create',
+            'recipe_items.update',
+            'recipe_items.delete',
 
             // Ingredients
             'ingredients.view',
