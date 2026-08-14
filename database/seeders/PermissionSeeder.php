@@ -1,0 +1,124 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\PermissionRegistrar;
+
+class PermissionSeeder extends Seeder
+{
+    public function run(): void
+    {
+
+        $permissions = [
+
+            // Dashboard
+            'dashboard.view',
+
+            // Categories
+            'categories.view',
+            'categories.create',
+            'categories.update',
+            'categories.delete',
+
+            // Menu Items
+            'menu_items.view',
+            'menu_items.create',
+            'menu_items.update',
+            'menu_items.delete',
+
+            // Modifiers
+            'modifiers.view',
+            'modifiers.create',
+            'modifiers.update',
+            'modifiers.delete',
+
+            // Recipes
+            'recipes.view',
+            'recipes.create',
+            'recipes.update',
+            'recipes.delete',
+
+            // Ingredients
+            'ingredients.view',
+            'ingredients.create',
+            'ingredients.update',
+            'ingredients.delete',
+
+            // Inventory
+            'inventory.view',
+            'inventory.adjust',
+            'inventory.waste',
+
+            // Suppliers
+            'suppliers.view',
+            'suppliers.create',
+            'suppliers.update',
+            'suppliers.delete',
+
+            // Purchases
+            'purchases.view',
+            'purchases.create',
+            'purchases.update',
+            'purchases.receive',
+            'purchases.cancel',
+
+            // Orders
+            'orders.view',
+            'orders.create',
+            'orders.update',
+            'orders.cancel',
+
+            // Payments
+            'payments.view',
+            'payments.create',
+            'payments.refund',
+
+            // Customers
+            'customers.view',
+            'customers.create',
+            'customers.update',
+            'customers.delete',
+
+            // Employees
+            'employees.view',
+            'employees.create',
+            'employees.update',
+            'employees.delete',
+
+            // Attendance
+            'attendance.view',
+            'attendance.manage',
+
+            // Expenses
+            'expenses.view',
+            'expenses.create',
+            'expenses.update',
+            'expenses.delete',
+
+            // Cash Register
+            'cash_register.view',
+            'cash_register.open',
+            'cash_register.close',
+            'cash_register.adjust',
+
+            // Reports
+            'reports.view',
+            'reports.sales',
+            'reports.inventory',
+            'reports.financial',
+
+            // Settings
+            'settings.view',
+            'settings.update',
+        ];
+
+        foreach ($permissions as $permission) {
+            Permission::firstOrCreate([
+                'name' => $permission,
+                'guard_name' => 'web',
+            ]);
+        }
+    }
+}
