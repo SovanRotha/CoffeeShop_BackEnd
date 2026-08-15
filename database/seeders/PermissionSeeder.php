@@ -58,11 +58,32 @@ class PermissionSeeder extends Seeder
             'recipe_items.update',
             'recipe_items.delete',
 
+            // Ingredient Categories
+            'ingredient_categories.view',
+            'ingredient_categories.create',
+            'ingredient_categories.update',
+            'ingredient_categories.delete',
+
             // Ingredients
             'ingredients.view',
             'ingredients.create',
             'ingredients.update',
             'ingredients.delete',
+
+            // Stock Adjustments
+            'stock_adjustments.view',
+            'stock_adjustments.create',
+            'stock_adjustments.delete',
+            'stock_adjustments.update',
+
+            // Stock Logs
+            'stock_logs.view',
+            
+            // Waste Records
+            'waste_records.view',
+            'waste_records.create',
+            'waste_records.delete',
+            'waste_records.update',
 
             // Inventory
             'inventory.view',

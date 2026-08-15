@@ -93,4 +93,6 @@ class StockAdjustmentController extends Controller
 
         return response()->json($adjustment, 201);
     }
+
+    
 }

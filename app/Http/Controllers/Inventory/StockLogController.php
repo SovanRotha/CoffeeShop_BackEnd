@@ -40,4 +40,19 @@ class StockLogController extends Controller
 
         return response()->json($log);
     }
+
+    public function destroy($id)
+    {
+        $log = Stock_Log::find($id);
+
+        if (!$log) {
+            return response()->json(['message' => 'Stock log not found'], 404);
+        }
+
+        $log->delete();
+
+        return response()->json(['message' => 'Stock log deleted successfully']);
+    }
+
+    
 }
