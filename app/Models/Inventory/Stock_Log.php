@@ -1,29 +1,32 @@
 <?php
 
-namespace App\Models\Product;
+namespace App\Models\Inventory;
 
-use App\Models\Inventory\Ingredient;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RecipeItem extends Model
+class Stock_Log extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'recipe_id',
         'ingredient_id',
+        'type',
         'quantity',
-        'unit',
+        'reference_type',
+        'reference_id',
+        'note',
+        'user_id',
     ];
-    
-    public function recipe()
-    {
-        return $this->belongsTo(Recipe::class);
-    }
 
     public function ingredient()
     {
         return $this->belongsTo(Ingredient::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
