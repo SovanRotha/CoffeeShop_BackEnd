@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models\Sale;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Payment extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+
+        'order_id',
+        'method',
+        'amount',
+        'status',
+        'transaction_reference',
+        'paid_at',
+
+    ];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+}

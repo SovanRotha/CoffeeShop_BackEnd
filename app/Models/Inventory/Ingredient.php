@@ -3,6 +3,7 @@
 namespace App\Models\Inventory;
 
 use App\Models\Product\RecipeItem;
+use App\Models\Purchase\Purchase_Item;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,6 +43,11 @@ class Ingredient extends Model
     public function stockAdjustment()
     {
         return $this->hasMany(StockAdjustment::class);
+    }
+
+    public function purchaseItem()
+    {
+        return $this->hasMany(Purchase_Item::class);
     }
 
 }
