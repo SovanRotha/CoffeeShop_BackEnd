@@ -35,8 +35,5 @@ class Order_Item extends Model
         return $this->hasMany(Order_Item_Modifier::class);
     }
 
-    public function payment()
-    {
-        return $this->hasMany(Payment::class);
-    }
+    
 }

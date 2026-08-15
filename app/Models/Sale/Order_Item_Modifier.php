@@ -2,6 +2,7 @@
 
 namespace App\Models\Sale;
 
+use App\Models\Product\Modifier;
 use App\Models\Product\Modifier_Option;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -26,5 +27,10 @@ class Order_Item_Modifier extends Model
     public function option()
     {
         return $this->belongsTo(Modifier_Option::class);
+    }
+
+    public function modifier()
+    {
+        return $this->belongsTo(Modifier::class);
     }
 }
