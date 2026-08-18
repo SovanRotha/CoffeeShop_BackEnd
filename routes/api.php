@@ -15,6 +15,9 @@ use App\Http\Controllers\Product\ModifierController;
 use App\Http\Controllers\Product\ModifierOptionController;
 use App\Http\Controllers\Product\RecipeController;
 use App\Http\Controllers\Product\RecipeItemController;
+use App\Http\Controllers\Purchase\PurcahseController;
+use App\Http\Controllers\Purchase\PurchaseItemController;
+use App\Http\Controllers\Purchase\SupplierController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -122,6 +125,24 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('waste_records.create')->post('/waste-records', [WasteRecordController::class, 'store']);
     Route::middleware('waste_records.update')->put('/waste-records/{id}', [WasteRecordController::class, 'update']);
     Route::middleware('waste_records.delete')->delete('/waste-records/{id}', [WasteRecordController::class, 'destroy']);
+
+    Route::middleware('suppliers.view')->get('/suppliers', [SupplierController::class, 'index']);
+    Route::middleware('suppliers.create')->post('/suppliers', [SupplierController::class, 'store']);
+    Route::middleware('suppliers.view')->get('/suppliers/{id}', [SupplierController::class, 'show']);
+    Route::middleware('suppliers.update')->put('/suppliers/{id}', [SupplierController::class, 'update']);
+    Route::middleware('suppliers.delete')->delete('/suppliers/{id}', [SupplierController::class, 'destroy']);
+
+    Route::middleware('purchases.view')->get('/purchases', [PurcahseController::class, 'index']);
+    Route::middleware('purchases.create')->post('/purchases', [PurcahseController::class, 'store']);
+    Route::middleware('purchases.view')->get('/purchases/{id}', [PurcahseController::class, 'show']);
+    Route::middleware('purchases.update')->put('/purchases/{id}', [PurcahseController::class, 'update']);
+    Route::middleware('purchases.delete')->delete('/purchases/{id}', [PurcahseController::class, 'destroy']);
+
+    Route::middleware('purchase_items.view')->get('/purchase-items', [PurchaseItemController::class, 'index']);
+    Route::middleware('purchase_items.create')->post('/purchase-items', [PurchaseItemController::class, 'store']);
+    Route::middleware('purchase_items.view')->get('/purchase-items/{id}', [PurchaseItemController::class, 'show']);
+    Route::middleware('purchase_items.update')->put('/purchase-items/{id}', [PurchaseItemController::class, 'update']);
+    Route::middleware('purchase_items.delete')->delete('/purchase-items/{id}', [PurchaseItemController::class, 'destroy']);
 
     Route::post('/register', [RegisterController::class, 'register']);
     Route::post('/logout', [LogoutController::class, 'logout']);

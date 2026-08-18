@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('invoice_number');
             $table->date('purchase_date');
             $table->decimal('total_amount', 10, 2);
-            $table->string('status');
-            $table->string('note')->nullable();
+            $table->string('status');            $table->string('note')->nullable();
             $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });

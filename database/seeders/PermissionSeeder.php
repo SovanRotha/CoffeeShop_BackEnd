@@ -100,8 +100,15 @@ class PermissionSeeder extends Seeder
             'purchases.view',
             'purchases.create',
             'purchases.update',
-            'purchases.receive',
-            'purchases.cancel',
+            'purchase.delete',
+            
+
+            // PurchaseItems
+            'purchase_items.view',
+            'purchase_items.create',
+            'purchase_items.update',
+            'purchase_items.delete',
+            
 
             // Orders
             'orders.view',

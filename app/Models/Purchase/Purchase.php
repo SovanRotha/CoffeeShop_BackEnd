@@ -2,6 +2,7 @@
 
 namespace App\Models\Purchase;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,5 +28,10 @@ class Purchase extends Model
     public function purchaseItem()
     {
         return $this->hasMany(Purchase_Item::class);
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class);
     }
 }
