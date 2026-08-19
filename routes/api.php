@@ -163,7 +163,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('order_item_modifier.view')->get('/order-item-modifiers', [OrderItemModifierController::class, 'index']);
     Route::middleware('order_item_modifier.view')->get('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'show']);
     Route::middleware('order_item_modifier.create')->post('/order-item-modifiers', [OrderItemModifierController::class, 'store']);
-    Route::middleware('order_item_modifier.update')->update('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'update']);
+    Route::middleware('order_item_modifier.update')->put('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'update']);
     Route::middleware('order_item_modifier.delete')->delete('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'destroy']);
 
     Route::middleware('payments.view')->get('/payments', [PaymentController::class, 'index']);

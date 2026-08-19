@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\PermissionRegistrar;
+
+
+// use Spatie\Permission\PermissionRegistrar;
 
 class PermissionSeeder extends Seeder
 {
@@ -16,7 +18,7 @@ class PermissionSeeder extends Seeder
         |--------------------------------------------------------------------------
         */
 
-        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+
 
 
         /*
@@ -331,7 +333,7 @@ class PermissionSeeder extends Seeder
         |--------------------------------------------------------------------------
         */
 
-        app()[PermissionRegistrar::class]->forgetCachedPermissions();
+      
     }
 }
 
