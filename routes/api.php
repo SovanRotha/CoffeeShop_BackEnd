@@ -22,6 +22,7 @@ use App\Http\Controllers\Sale\OrderController;
 use App\Http\Controllers\Sale\OrderItemController;
 use App\Http\Controllers\Sale\OrderItemModifierController;
 use App\Http\Controllers\Sale\PaymentController;
+use App\Http\Controllers\Sales\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -147,6 +148,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('purchase_items.view')->get('/purchase-items/{id}', [PurchaseItemController::class, 'show']);
     Route::middleware('purchase_items.update')->put('/purchase-items/{id}', [PurchaseItemController::class, 'update']);
     Route::middleware('purchase_items.delete')->delete('/purchase-items/{id}', [PurchaseItemController::class, 'destroy']);
+
+    Route::middleware('customers.view')->get('/customers', [CustomerController::class, 'index']);
+    Route::middleware('customers.view')->get('/customers/{id}', [CustomerController::class, 'show']);
+    Route::middleware('customers.create')->post('/customers', [CustomerController::class, 'store']);
+    Route::middleware('customers.update')->put('/customers/{id}', [CustomerController::class, 'update']);
+    Route::middleware('customers.delete')->delete('/customers/{id}', [CustomerController::class, 'destroy']);
 
     Route::middleware('orders.view')->get('/orders', [OrderController::class, 'index']);
     Route::middleware('orders.view')->get('/orders/{id}', [OrderController::class, 'show']);
