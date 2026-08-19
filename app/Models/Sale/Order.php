@@ -21,7 +21,6 @@ class Order extends Model
         'tax',
         'total',
         'note',
-        'completed_at',
     ];
 
     public function customer()

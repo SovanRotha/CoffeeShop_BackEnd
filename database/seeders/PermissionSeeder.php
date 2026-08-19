@@ -116,10 +116,24 @@ class PermissionSeeder extends Seeder
             'orders.update',
             'orders.cancel',
 
+            // OrderItems
+            'order_items.view',
+            'order_items.create',
+            'order_items.update',
+            'order_items.delete',
+
+            // Order_Item_Modifier
+            'order_item_modifiers.view',
+            'order_item_modifiers.create',
+            'order_item_modifiers.update',
+            'order_item_modifiers.delete',
+
             // Payments
             'payments.view',
             'payments.create',
-            'payments.refund',
+            'payments.update',
+            'payments.delete',
+            // 'payments.refund',
 
             // Customers
             'customers.view',

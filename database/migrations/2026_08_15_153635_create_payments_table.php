@@ -30,7 +30,7 @@ return new class extends Migration
                 'PENDING',
                 'PAID',
                 'FAILED',
-                'REFUNDED',
+                
             ])->default('PENDING');
 
             $table->string('transaction_reference')

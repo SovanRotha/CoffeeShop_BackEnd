@@ -18,6 +18,10 @@ use App\Http\Controllers\Product\RecipeItemController;
 use App\Http\Controllers\Purchase\PurcahseController;
 use App\Http\Controllers\Purchase\PurchaseItemController;
 use App\Http\Controllers\Purchase\SupplierController;
+use App\Http\Controllers\Sale\OrderController;
+use App\Http\Controllers\Sale\OrderItemController;
+use App\Http\Controllers\Sale\OrderItemModifierController;
+use App\Http\Controllers\Sale\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -143,6 +147,31 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('purchase_items.view')->get('/purchase-items/{id}', [PurchaseItemController::class, 'show']);
     Route::middleware('purchase_items.update')->put('/purchase-items/{id}', [PurchaseItemController::class, 'update']);
     Route::middleware('purchase_items.delete')->delete('/purchase-items/{id}', [PurchaseItemController::class, 'destroy']);
+
+    Route::middleware('orders.view')->get('/orders', [OrderController::class, 'index']);
+    Route::middleware('orders.view')->get('/orders/{id}', [OrderController::class, 'show']);
+    Route::middleware('orders.create')->post('/orders', [OrderController::class, 'store']);
+    Route::middleware('orders.update')->put('/orders/{id}', [OrderController::class, 'update']);
+    Route::middleware('orders.cancel')->get('/orders/{id}', [OrderController::class, 'destroy']);
+
+    Route::middleware('order_items.view')->get('/order-items', [OrderItemController::class, 'index']);
+    Route::middleware('order_items.view')->get('/order-items/{id}', [OrderItemController::class, 'show']);
+    Route::middleware('order_items.create')->post('/order-items', [OrderItemController::class, 'store']);
+    Route::middleware('order_items.update')->put('/order-items/{id}', [OrderItemController::class, 'update']);
+    Route::middleware('order_items.delete')->delete('/order-items/{id}', [OrderItemController::class, 'destroy']);
+
+    Route::middleware('order_item_modifier.view')->get('/order-item-modifiers', [OrderItemModifierController::class, 'index']);
+    Route::middleware('order_item_modifier.view')->get('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'show']);
+    Route::middleware('order_item_modifier.create')->post('/order-item-modifiers', [OrderItemModifierController::class, 'store']);
+    Route::middleware('order_item_modifier.update')->update('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'update']);
+    Route::middleware('order_item_modifier.delete')->delete('/order-item-modifiers/{id}', [OrderItemModifierController::class, 'destroy']);
+
+    Route::middleware('payments.view')->get('/payments', [PaymentController::class, 'index']);
+    Route::middleware('payments.view')->get('/payments/{id}', [PaymentController::class, 'show']);
+    Route::middleware('payments.create')->post('/payments', [PaymentController::class, 'store']);
+    Route::middleware('payments.update')->put('/payments/{id}', [PaymentController::class, 'update']);
+    Route::middleware('payments.delete')->delete('/payments/{id}', [PaymentController::class, 'destroy']);
+
 
     Route::post('/register', [RegisterController::class, 'register']);
     Route::post('/logout', [LogoutController::class, 'logout']);
